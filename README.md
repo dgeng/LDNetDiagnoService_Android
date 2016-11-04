@@ -2,14 +2,16 @@
 ===============
 
 利用ping、tcp connect和traceroute的原理，对指定域名（通常为后台API的提供域名）进行网络诊断，并收集诊断日志。功能通过Service的方式提供给各个产品项目，由各个项目组决定如何使用。
+With the mechenism of ping, tcp connect and traceroute, it performs network diagnosis for given domains and collects diagnosis logs. The functions/features are provided various product projects via Service and decided by each project on how to use it.
 
 
-* Android的实现方案一: 
-> 是通过后台线程执行ping命令的方式模拟traceroute的过程，缺点就是模拟过程较慢，timeout的出现比较频繁
+* Android的实现方案一 Android Solution 1: 
+> 是通过后台线程执行ping命令的方式模拟traceroute的过程，缺点就是模拟过程较慢，timeout的出现比较频繁。Execute ping command in a background thread to simulate traceroute, the cons are the simulation is low, there're many timeouts
+
 
  
 * Android的实现方案二: 
->通过编译开源网络检测库[iputils](http://www.linuxfoundation.org/collaborate/workgroups/networking/iputils)C代码的方式对traceroute进行了套接字发送ICMP报文模拟，可以明显提高检测速度；（关于iputils工具原理实现，请参考[博文](http://blog.csdn.net/fsdev/article/category/1212445)）
+>通过编译开源网络检测库[iputils](http://www.linuxfoundation.org/collaborate/workgroups/networking/iputils)C代码的方式对traceroute进行了套接字发送ICMP报文模拟，可以明显提高检测速度；（关于iputils工具原理实现，请参考[博文](http://blog.csdn.net/fsdev/article/category/1212445)）Compile open source network detection library[iputils](http://www.linuxfoundation.org/collaborate/workgroups/networking/iputils)C code to simulate traceroute's ICMP packet of TCP/IP, so that it improves the detection speed; (for iputils tools mechanism and implementation, please refer to [blog](http://blog.csdn.net/fsdev/article/category/1212445)
 
 
 
