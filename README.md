@@ -10,35 +10,35 @@ With the mechenism of ping, tcp connect and traceroute, it performs network diag
 
 
  
-* Android的实现方案二: 
+* Android的实现方案二 Android Solution 2: 
 >通过编译开源网络检测库[iputils](http://www.linuxfoundation.org/collaborate/workgroups/networking/iputils)C代码的方式对traceroute进行了套接字发送ICMP报文模拟，可以明显提高检测速度；（关于iputils工具原理实现，请参考[博文](http://blog.csdn.net/fsdev/article/category/1212445)）Compile open source network detection library[iputils](http://www.linuxfoundation.org/collaborate/workgroups/networking/iputils)C code to simulate traceroute's ICMP packet of TCP/IP, so that it improves the detection speed; (for iputils tools mechanism and implementation, please refer to [blog](http://blog.csdn.net/fsdev/article/category/1212445)
 
 
 
 
-## LDNetDiagnoService最终效果
+## LDNetDiagnoService最终效果 LDNetDiagnoService Final Results
 -------------------
 
-* 调用网络诊断服务，监控日志输出；
-* 诊断结束之后，返回日志文本;
-* 调用者可以选择保存、邮件上传、接口上传等方式上传监控日志；
+* 调用网络诊断服务，监控日志输出；Call network diagnosis service, monitor log output
+* 诊断结束之后，返回日志文本; After diagnosis, return log text
+* 调用者可以选择保存、邮件上传、接口上传等方式上传监控日志；The caller can choose to save, upload by email, upload by internface etc to upload logs
 
-如下图所示：
+如下图所示：Picture as below
 
 ![](LDNetDiagnoServiceDemo_Android/netdiagnosis_android.png)
 
 
 
-## 如何集成LDNetDiagnoService_Android
+## 如何集成LDNetDiagnoService_Android How to integrate LDNetDiagnoService_Android
 -------------------
 
-### 通过库依赖的方式
+### 通过库依赖的方式 By library dependency
 
 * 拷贝[LDNetDiagnoService_Android](LDNetDiagnoService_Android)文件夹到你的代码空间；
 * 在你的主工程中Add LDNetDiagnoService_Android 库工程；
 
 
-## 如何使用LDNetDiagnoService_IOS
+## 如何使用LDNetDiagnoService_IOS How to use LDNetDiagnoService_IOS
 ---------------------------------
 当service代码集成到工程之后，即可通过如下方式调用网络诊断服务：
 
